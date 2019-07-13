@@ -2,7 +2,7 @@ clc
 clear
 %data = xlsread('data.xlsx');
 rng(0)
-N    = 40;
+N    = 100;
 data = gen_data(N);
 edge = [];
 
@@ -12,7 +12,7 @@ conflict_nodes = [];
 chromatic = 0;
 
 edge = connect(data,N);
-num_population = 20;
+num_population = 30;
 population = zeros(num_population,N);
 chromatic = cal_chromatic(edge,N);
 population = randi([1,chromatic],num_population,N);
